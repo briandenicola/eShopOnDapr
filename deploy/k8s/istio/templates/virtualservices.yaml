@@ -13,11 +13,14 @@ spec:
   -  {{ .Values.istioGateway }}
   
   http:
-
   - name: "api-gateway"
     match:
     - uri:
-        prefix: /gateway
+        prefix: /gateway(/|$)(.*)
+    rewrite:
+      uriRegexRewrite:
+        match: "/gateway(/|$)(.*)$"
+        rewrite: \2
     route:
     - destination:
         host: apigateway
@@ -33,7 +36,6 @@ spec:
         host: identity-api
         port:
           number: 80  
-
 
   - name: "status-api"
     match:
