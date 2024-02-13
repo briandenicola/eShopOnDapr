@@ -43,7 +43,7 @@ metadata:
     service: seq
 spec:
   ports:
-    - name: ui
+    - name: http
       port: 80
       targetPort: seq-http
   selector:
