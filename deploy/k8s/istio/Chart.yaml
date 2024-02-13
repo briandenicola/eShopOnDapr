@@ -2,4 +2,4 @@ apiVersion: v2
 name: eShopOnDapr
 description: An eShopOnDapr Helm chart for k8s with istio
 type: application
-version: 2.0.1
+version: 2.0.2
