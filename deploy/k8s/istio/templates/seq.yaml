@@ -49,7 +49,7 @@ spec:
   selector:
     service: seq
 
-# ---
+---
 
 # apiVersion: networking.k8s.io/v1
 # kind: Ingress
@@ -75,6 +75,30 @@ spec:
 #             name: seq
 #             port: 
 #               name: ui
+
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: seq-ingress
+  namespace: {{ .Values.namespace }}
+  labels:
+    app: eshop
+    service: seq
+spec:
+  hosts:
+  - {{ .Values.hostName }}
+  gateways:
+  -  {{ .Values.istioGateway }}
+  http:
+  - match:
+    - uri:
+        prefix: "/log"
+    route:
+    - destination:
+        host: seq
+        port:
+          number: ui  
+
 
 # ---
 
