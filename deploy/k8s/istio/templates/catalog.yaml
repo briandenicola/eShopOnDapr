@@ -37,10 +37,14 @@ spec:
         dapr.io/app-port: "80"
         dapr.io/config: "dapr-config"
         dapr.io/log-as-json: "true"
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "9090"
+        prometheus.io/path: "/"        
     spec:
       containers:
         - name: catalog-api
           image: eshopdapr/catalog.api:latest
+          #image: bjd145/eshopdapr-catalog.api:20220331
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80

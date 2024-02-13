@@ -36,6 +36,7 @@ spec:
       containers:
         - name: blazorclient
           image: eshopdapr/blazor.client:latest
+          #image: bjd145/eshopondapr-blazor:a6daad60
           imagePullPolicy: IfNotPresent
           ports:
             - name: client-http

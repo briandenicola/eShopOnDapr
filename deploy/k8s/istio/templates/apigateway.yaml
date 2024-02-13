@@ -39,6 +39,9 @@ spec:
         dapr.io/app-id: "apigateway"
         dapr.io/app-port: "80"
         dapr.io/config: "dapr-config"
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "9090"
+        prometheus.io/path: "/"        
     spec:
       containers:
       - name: apigateway
