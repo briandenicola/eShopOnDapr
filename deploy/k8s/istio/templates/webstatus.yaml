@@ -75,7 +75,7 @@ spec:
   selector:
     service: webstatus
 
-# ---
+---
 
 # apiVersion: networking.k8s.io/v1
 # kind: Ingress
@@ -125,7 +125,6 @@ spec:
           number: 80  
 
 ---
-# ---
 
 # apiVersion: networking.k8s.io/v1
 # kind: Ingress
